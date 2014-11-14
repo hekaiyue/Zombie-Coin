@@ -1,0 +1,22 @@
+blockquote{
+	color:red;
+	background-color: blue;
+}
+
+
+h1{
+	color:coral;
+}
+.alpha{
+	color:yellow;	
+}
+.alpha:hover{
+
+	color:blue;
+}
+.alpha:visited{
+	color:green	;
+}
+#tag1{
+		color:purple;
+}

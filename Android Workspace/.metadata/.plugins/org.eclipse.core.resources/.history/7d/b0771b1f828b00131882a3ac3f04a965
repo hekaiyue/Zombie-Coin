@@ -1,0 +1,35 @@
+package com.example.zcoins;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class HTTPHandler {
+	
+	public static void updatebalance(int id){
+		try {
+			 URL url = new URL("http://54.201.221.41/");
+			 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+		     urlConnection.setDoOutput(true);
+		     urlConnection.setChunkedStreamingMode(0);
+		     urlConnection.setRequestMethod("PUT");
+		     
+		     byte[] bytes = new byte[4];
+		     for (int i = 0; i < 4; i++) {
+		         bytes[i] = (byte)(id >>> (i * 8));
+		     }
+		     
+		     OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
+		     
+		     out.write(bytes);
+		     urlConnection.disconnect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+}

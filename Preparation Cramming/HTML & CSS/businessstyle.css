@@ -1,0 +1,21 @@
+h1{
+	color:blue;
+	font:garamond;
+}
+h2{
+	color:green;
+	font:comic;
+}
+h3{
+	color:purple;
+	font:times;
+}
+.map{
+	color:pink;
+}
+.map:hover{
+	color:red;
+}
+.map:visited{
+	color:orange;
+}
